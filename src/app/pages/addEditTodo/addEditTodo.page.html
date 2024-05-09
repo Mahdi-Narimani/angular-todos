@@ -1,0 +1,47 @@
+<main class="p-10 tracking-wider">
+    <form action="">
+
+        <mat-form-field class="w-full text-primary">
+            <mat-label>Task Name</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field class="w-full">
+            <mat-label>Date & Time</mat-label>
+            <input matInput [matDatepicker]="dp" [formControl]="date">
+            <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker color="primary" #dp></mat-datepicker>
+        </mat-form-field>
+
+        <div class="flex gap-10">
+            <mat-form-field>
+                <mat-label>Start time</mat-label>
+                <mat-select>
+                    <mat-option value="one">09:00 AM</mat-option>
+                    <mat-option value="two">11:00 AM</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>End time</mat-label>
+                <mat-select>
+                    <mat-option value="one">09:00 AM</mat-option>
+                    <mat-option value="two">11:00 AM</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+        <mat-form-field class="w-full">
+            <mat-label>Description</mat-label>
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="10"
+                cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+
+        <button
+            class="w-full mt-52 bg-primary/90 text-white p-4 rounded-md text-base hover:tracking-widest hover:bg-primary transition-all">
+            Save Task
+        </button>
+
+    </form>
+</main>

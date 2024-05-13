@@ -1,0 +1,73 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+// Define your custom primary color palette
+$my-app-primary: mat.define-palette(
+  (
+    100: #15475c,
+    200: #2a8db3,
+    300: #41d1ef,
+    400: #60d8e9,
+    500: #80e0e4,
+    600: #8bdfe2,
+    700: #9de5e7,
+    800: #a1dddf,
+    900: #bdebec,
+    contrast: (
+      100: rgba(rgb(255, 255, 255), 0.87),
+    ),
+  ),
+  100
+);
+
+$my-app-accent: mat.define-palette(
+  (
+    100: #15475c,
+    200: #2a8db3,
+    300: #41d1ef,
+    400: #60d8e9,
+    500: #80e0e4,
+    600: #8bdfe2,
+    700: #9de5e7,
+    800: #a1dddf,
+    900: #bdebec,
+    contrast: (
+      100: rgba(black, 0.87),
+    ),
+  ),
+  100
+);
+$my-app-warn: mat.define-palette(
+  (
+    100: #15475c,
+    200: #2a8db3,
+    300: #41d1ef,
+    400: #60d8e9,
+    500: #80e0e4,
+    600: #8bdfe2,
+    700: #9de5e7,
+    800: #a1dddf,
+    900: #bdebec,
+    contrast: (
+      100: rgba(black, 0.87),
+    ),
+  ),
+  100
+);
+
+// Define your custom theme using the primary palette
+$my-app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-app-primary,
+      accent: $my-app-accent,
+      warn: $my-app-warn,
+    ),
+  )
+);
+
+// Apply the custom theme to all Angular Material components
+@include mat.all-component-themes($my-app-theme);
+// @include mat.core-theme($my-app-theme);
+// @include angular-material-theme($my-app-theme);

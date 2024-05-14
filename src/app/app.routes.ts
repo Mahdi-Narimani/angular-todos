@@ -14,7 +14,7 @@ export const routes: Routes = [
     component: AddEditTodoPage,
   },
   {
-    path: "edit-todo",
+    path: "edit-todo/:id",
     component: AddEditTodoPage,
   },
   {

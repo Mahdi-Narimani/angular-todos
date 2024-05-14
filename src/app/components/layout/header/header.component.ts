@@ -1,7 +1,6 @@
-import { Component, inject } from "@angular/core";
+import { Component } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
 import { MatBadgeModule } from "@angular/material/badge";
-import { Router } from "@angular/router";
 
 @Component({
   selector: "app-header",
@@ -12,9 +11,5 @@ import { Router } from "@angular/router";
 export class HeaderComponent {
   title = "Home Page";
 
-  private router = inject(Router);
-
-  constructor() {
-    // console.log(this.router.url);
-  }
+  constructor() {}
 }

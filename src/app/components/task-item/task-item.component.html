@@ -6,17 +6,16 @@
 
 
         <div class="flex flex-col gap-1">
-            <p>UI Design</p>
+            <p>{{todoItem.title}}</p>
             <p>
-                <span class="text-xs font-medium text-slate-500">09:00 AM</span>
+                <span class="text-xs font-medium text-slate-500">{{todoItem.startTime}}</span>
                 -
-                <span class="text-xs font-medium text-slate-500">11:00 AM</span>
+                <span class="text-xs font-medium text-slate-500">{{todoItem.endTime}}</span>
             </p>
         </div>
     </div>
 
-
-    <a routerLink="/task/1234" class="rounded-full p-2 hover:bg-secondary/40 transition-all">
+    <a routerLink="/task/{{todoItem.id}}" class="rounded-full p-2 hover:bg-secondary/40 transition-all">
         <img src="../assets/icons/arrow-right.svg" alt="arrow-right">
     </a>
 </li>

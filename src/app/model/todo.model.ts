@@ -1,6 +1,7 @@
 export interface ITodoModel {
+  id: string;
   title: string;
-  dateTime: any;
+  dateTime: string;
   startTime?: Date;
   endTime?: Date;
   description?: string;

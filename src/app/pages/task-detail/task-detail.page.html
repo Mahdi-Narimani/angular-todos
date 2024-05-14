@@ -1,4 +1,62 @@
-<div class="pt-28">
-    <h1></h1>
-</div>
-<app-footer></app-footer>
+<main class="px-10 pt-28 tracking-wider flex flex-col gap-5 h-screen">
+    <mat-card class="w-full !shadow-md !shadow-primary/50">
+        <mat-card-header class="text-primary mb-2">
+            <mat-card-title>Title</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="text-base">{{todoItem.title}}</p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="w-full !shadow-md !shadow-primary/50">
+        <mat-card-header class="text-primary mb-2">
+            <mat-card-title>Date & Time</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <h4></h4>
+            <p class="text-base">{{todoItem.dateTime}}</p>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="flex gap-10 justify-between ">
+        <mat-card class="w-full !shadow-md !shadow-primary/50">
+            <mat-card-header class="text-primary mb-2">
+                <mat-card-title>Start Time</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="">
+                <p class="text-base">{{todoItem.startTime}}</p>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="w-full !shadow-md !shadow-primary/50">
+            <mat-card-header class="text-primary mb-2">
+                <mat-card-title>End Time</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p class="text-base">{{todoItem.endTime}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+
+    <mat-card class="w-full !shadow-md !shadow-primary/50">
+        <mat-card-header class="text-primary mb-2">
+            <mat-card-title>Description</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="text-base">{{todoItem.description}}</p>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="flex flex-col gap-5 mt-36">
+        <button type="submit"
+            class="w-full bg-red-700/90 text-white p-4 rounded-md text-base hover:tracking-widest hover:bg-red-600 transition-all"
+            (click)="handleRemoveItem(todoItem.id)">
+            Remove
+        </button>
+        <a routerLink="/edit-todo/{{todoItem.id}}" type="submit"
+            class="w-full text-center bg-primary/90 text-white p-4 rounded-md text-base hover:tracking-widest hover:bg-primary transition-all">
+            Edit
+        </a>
+    </div>
+</main>

@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
 import { MatBadgeModule } from "@angular/material/badge";
+import { ActivationStart, Router } from "@angular/router";
 
 @Component({
   selector: "app-header",
@@ -9,7 +10,15 @@ import { MatBadgeModule } from "@angular/material/badge";
   templateUrl: "./header.component.html",
 })
 export class HeaderComponent {
-  title = "Home Page";
-
+  title: any;
+  router = inject(Router);
   constructor() {}
+
+  ngOnInit(): void {
+    this.router.events.subscribe((data) => {
+      if (data instanceof ActivationStart) {
+        this.title = data.snapshot.data["title"];
+      }
+    });
+  }
 }

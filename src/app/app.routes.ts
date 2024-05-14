@@ -8,21 +8,26 @@ export const routes: Routes = [
   {
     path: "",
     component: HomePage,
+    data: { title: "Home" },
   },
   {
     path: "new-todo",
     component: AddEditTodoPage,
+    data: { title: "Add Todo" },
   },
   {
     path: "edit-todo/:id",
     component: AddEditTodoPage,
+    data: { title: "Edit Todo" },
   },
   {
     path: "my-tasks",
     component: MyTaskPage,
+    data: { title: "MyTask" },
   },
   {
-    path: 'task/:id',
-    component: TaskDetailPage
-  }
+    path: "task/:id",
+    component: TaskDetailPage,
+    data: { title: "Detail Todo" },
+  },
 ];

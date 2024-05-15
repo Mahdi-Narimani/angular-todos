@@ -1,6 +1,6 @@
-<header class="fixed w-full top-0 z-10 bg-white pb-4 px-10 pt-8 shadow-md rounded-b-3xl">
+<header class="w-full bg-white pb-4 sm:px-10 max-sm:px-5 pt-8 shadow-md rounded-b-3xl">
     <div class="flex justify-between items-center">
-        <button>
+        <button (click)="toggleNavbar()">
             <img src="../../../assets/icons/menu.svg" alt="menu icon">
         </button>
 
@@ -9,6 +9,19 @@
         <button mat-raised-button matBadge="5" matBadgeSize="medium" matBadgeColor="primary">
             <img class="size-7" src="../../../assets/icons/notification.svg" alt="notification icon">
         </button>
-
     </div>
+
+    @if (showToggleMenu) {
+    <div class="fixed z-50 left-0 top-0 w-full h-screen bg-primary/60">
+        <div
+            class="absolute top-0 left-0 h-screen rounded-tr-lg rounded-br-lg max-sm:w-[90%] sm:w-[60%] bg-slate-100 z-50 px-5 pt-8 animate-navbar">
+            <div class="flex justify-end">
+                <button (click)="toggleNavbar()">
+                    <img src="../../../assets/icons/close.svg" alt="menu icon">
+                </button>
+            </div>
+        </div>
+    </div>
+    }
+
 </header>

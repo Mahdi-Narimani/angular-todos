@@ -1,5 +1,5 @@
-<main class="px-10 pt-28 tracking-wider">
-    <form [formGroup]="registerForm">
+<main class="sm:px-10 max-sm:px-5 pt-5 pb-8 tracking-wider container overflow-y-auto">
+    <form [formGroup]="registerForm" (submit)="handleSubmit()">
 
         <mat-form-field class="w-full form-field text-primary">
             <mat-label>Task Name</mat-label>
@@ -10,7 +10,8 @@
         <mat-form-field class="w-full form-field">
             <mat-label>Date & Time</mat-label>
             <input matInput [matDatepicker]="dp" formControlName="dateTime" name="dateTime" required>
-            <mat-error [ngStyle]="{'color':'red'}" *ngIf="!registerForm.value.dateTime">This field is mandatory</mat-error>
+            <mat-error [ngStyle]="{'color':'red'}" *ngIf="!registerForm.value.dateTime">This field is
+                mandatory</mat-error>
             <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
             <mat-datepicker color="primary" #dp></mat-datepicker>
         </mat-form-field>
@@ -23,7 +24,8 @@
                     <mat-option [value]="item">{{item}}</mat-option>
                     }
                 </mat-select>
-                <mat-error [ngStyle]="{'color':'red'}" *ngIf="!registerForm.value.startTime">This field is mandatory</mat-error>
+                <mat-error [ngStyle]="{'color':'red'}" *ngIf="!registerForm.value.startTime">This field is
+                    mandatory</mat-error>
             </mat-form-field>
 
             <mat-form-field>
@@ -33,19 +35,19 @@
                     <mat-option [value]="item">{{item}}</mat-option>
                     }
                 </mat-select>
-                <mat-error [ngStyle]="{'color':'red'}" *ngIf="!registerForm.value.endTime">This field is mandatory</mat-error>
+                <mat-error [ngStyle]="{'color':'red'}" *ngIf="!registerForm.value.endTime">This field is
+                    mandatory</mat-error>
             </mat-form-field>
         </div>
 
 
         <mat-form-field class="w-full">
             <mat-label>Description</mat-label>
-            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="10"
-                cdkAutosizeMaxRows="5" formControlName="description" name="description"></textarea>
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4"
+                cdkAutosizeMaxRows="10" formControlName="description" name="description"></textarea>
         </mat-form-field>
 
-        <button type="submit"
-            class="w-full mt-40 bg-primary/90 text-white p-4 rounded-md text-base hover:tracking-widest hover:bg-primary transition-all"
+        <button mat-raised-button color="primary" class="w-full rounded-md !text-base !py-5 !font-normal"
             (click)="handleSubmit()" (keydown.enter)="handleSubmit()">
             Save Task
         </button>

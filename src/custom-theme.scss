@@ -15,15 +15,15 @@ $my-app-primary: mat.define-palette(
     800: #a1dddf,
     900: #bdebec,
     contrast: (
-      100: rgba(rgb(255, 255, 255), 0.87),
+      100: rgba(#fff, 0.87),
     ),
   ),
   100
 );
 
-$my-app-accent: mat.define-palette(
+$my-app-secondary: mat.define-palette(
   (
-    100: #15475c,
+    100: #66d2d2,
     200: #2a8db3,
     300: #41d1ef,
     400: #60d8e9,
@@ -33,27 +33,27 @@ $my-app-accent: mat.define-palette(
     800: #a1dddf,
     900: #bdebec,
     contrast: (
-      100: rgba(black, 0.87),
+      100: rgba(#fff, 0.87),
     ),
   ),
   100
 );
 $my-app-warn: mat.define-palette(
   (
-    100: #15475c,
-    200: #2a8db3,
-    300: #41d1ef,
-    400: #60d8e9,
-    500: #80e0e4,
-    600: #8bdfe2,
-    700: #9de5e7,
-    800: #a1dddf,
-    900: #bdebec,
+    100: #b40000,
+    200: #ff0000,
+    300: #ff0000,
+    400: #ff0000,
+    500: #ff0000,
+    600: #ff0000,
+    700: #ff0000,
+    800: #ff0000,
+    900: #ff0000,
     contrast: (
-      100: rgba(black, 0.87),
+      100: rgba(#fff, 0.87),
     ),
   ),
-  100
+  100,
 );
 
 // Define your custom theme using the primary palette
@@ -61,7 +61,7 @@ $my-app-theme: mat.define-light-theme(
   (
     color: (
       primary: $my-app-primary,
-      accent: $my-app-accent,
+      accent: $my-app-secondary,
       warn: $my-app-warn,
     ),
   )

@@ -11,11 +11,7 @@ import { FooterComponent } from "./components/layout/footer/footer.component";
   templateUrl: "./app.component.html",
 })
 export class AppComponent {
-  // version-1
-
-  // todos: ITodoModel[] = [];
-
-  // version-1
+ // version-1
   // private router = inject(Router);
 
   constructor() {

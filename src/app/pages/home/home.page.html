@@ -1,4 +1,4 @@
-<main class="pt-28 px-10 tracking-wider">
+<main class="pt-5 sm:px-10 max-sm:px-3 tracking-wider">
     <app-progress [todoLength]="todos.length"></app-progress>
 
     <div>
@@ -11,7 +11,7 @@
 
         <ul class="task-list-home">
             @if (todos.length === 0) { 
-                <img class="size-96 mx-auto" src="../../../assets/images/todo.png" alt="todo img">
+                <img class="size-80 max-sm:size-48 mx-auto" src="../../../assets/images/todo.png" alt="todo img">
             }
             @for (item of todos; track $index) {
             <app-task-item [todoItem]="item"></app-task-item>

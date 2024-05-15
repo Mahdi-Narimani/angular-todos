@@ -1,25 +1,25 @@
 <footer
-    class="fixed bottom-0 w-full z-10 bg-white px-16 py-5 rounded-t-3xl shadow-[rgba(0,0,0,0.1)_0_-4px_6px_-1px] rgba(0,0,0,0.1)_0_-2px_4px_-2px">
+    class="relative w-full bg-white sm:px-16 max-sm:px-6 py-5 rounded-t-3xl shadow-[rgba(0,0,0,0.1)_0_-4px_6px_-1px] rgba(0,0,0,0.1)_0_-2px_4px_-2px">
 
-    <a routerLink="/new-todo" class="absolute -top-6 right-[45%]">
-        <img src="../assets/icons/add.svg" />
+    <a routerLink="/new-todo" class="absolute max-sm:-top-4 sm:-top-6 max-sm:right-[44%] sm:right-[45%] hover:scale-105 transition-all">
+        <img class="max-sm:size-10 sm:size-14" src="../assets/icons/add.svg" />
     </a>
 
     <div class="flex justify-between items-center">
-        <div class="flex items-center gap-16">
+        <div class="flex items-center sm:gap-16 max-sm:gap-10">
             <a routerLink="/">
-                <img src="../../../assets/icons/home.svg" alt="home icon">
+                <img class="icon-hover" src="../../../assets/icons/home.svg" alt="home icon">
             </a>
             <button>
-                <img src="../../../assets/icons/calendar.svg" alt="calendar icon">
+                <img class="icon-hover" src="../../../assets/icons/calendar.svg" alt="calendar icon">
             </button>
         </div>
-        <div class="flex items-center gap-16">
+        <div class="flex items-center sm:gap-16 max-sm:gap-10">
             <button>
-                <img src="../../../assets/icons/message.svg" alt="message icon">
+                <img class="icon-hover" src="../../../assets/icons/message.svg" alt="message icon">
             </button>
             <button>
-                <img src="../../../assets/icons/user.svg" alt="user icon">
+                <img class="icon-hover" src="../../../assets/icons/user.svg" alt="user icon">
             </button>
         </div>
     </div>

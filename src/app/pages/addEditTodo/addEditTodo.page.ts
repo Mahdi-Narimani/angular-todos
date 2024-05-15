@@ -1,12 +1,13 @@
 import { Component, inject } from "@angular/core";
-import { FooterComponent } from "../../components/layout/footer/footer.component";
 import { TaskItemComponent } from "../../components/task-item/task-item.component";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from "@angular/common";
-import {
+import
+{
   FormControl,
   FormGroup,
   FormsModule,
@@ -41,7 +42,6 @@ export const MY_FORMATS = {
   selector: "app-add-edit-todo",
   standalone: true,
   imports: [
-    FooterComponent,
     TaskItemComponent,
     MatInputModule,
     MatFormFieldModule,
@@ -49,12 +49,14 @@ export const MY_FORMATS = {
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    CommonModule,
+    CommonModule, 
+    MatButtonModule
   ],
   providers: [provideMomentDateAdapter(MY_FORMATS)],
   templateUrl: "./addEditTodo.page.html",
 })
-export class AddEditTodoPage {
+export class AddEditTodoPage
+{
   todos: any = [];
   ItemId = "";
   ItemForEdit: any = {};
@@ -67,11 +69,14 @@ export class AddEditTodoPage {
   constructor(
     private localStorageTodo: LocalStorageService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      if (params["id"]) {
+  ngOnInit(): void
+  {
+    this.route.params.subscribe((params) =>
+    {
+      if (params["id"])
+      {
         this.editMode = true;
         this.ItemId = params["id"];
         this.ItemForEdit = this.localStorageTodo.getItemById(this.ItemId);
@@ -102,12 +107,15 @@ export class AddEditTodoPage {
     });
   }
 
-  handleSubmit() {
-    if (this.registerForm.invalid) {
+  handleSubmit()
+  {
+    if (this.registerForm.invalid)
+    {
       return;
     }
 
-    if (!this.editMode) {
+    if (!this.editMode)
+    {
       const todoData = {
         id: crypto.randomUUID(),
         title: this.registerForm.value.title,
@@ -122,30 +130,34 @@ export class AddEditTodoPage {
       // version-1
       // this.router.navigate(["/"], { state: { data: todoData } });
 
-      if (localStorage.getItem("todos")) {
+      if (localStorage.getItem("todos"))
+      {
         const currentTodos: any = this.localStorageTodo.getItems("todos");
 
         this.todos.push(...currentTodos);
         this.localStorageTodo.addItem("todos", this.todos);
       }
+
       this.todos.push(todoData);
       this.localStorageTodo.addItem("todos", this.todos);
       this.router.navigate(["/"]);
-    } else {
+    } else
+    {
       const editItem = this.localStorageTodo
         .getItems("todos")
-        .map((item: any) => {
+        .map((item: any) =>
+        {
           return item.id === this.ItemId
             ? {
-                id: this.ItemId,
-                title: this.registerForm.value.title,
-                dateTime: moment(this.registerForm.value.dateTime).format(
-                  "DD MMMM, dddd"
-                ),
-                startTime: this.registerForm.value.startTime,
-                endTime: this.registerForm.value.endTime,
-                description: this.registerForm.value.description,
-              }
+              id: this.ItemId,
+              title: this.registerForm.value.title,
+              dateTime: moment(this.registerForm.value.dateTime).format(
+                "DD MMMM, dddd"
+              ),
+              startTime: this.registerForm.value.startTime,
+              endTime: this.registerForm.value.endTime,
+              description: this.registerForm.value.description,
+            }
             : item;
         });
       this.localStorageTodo.addItem("todos", editItem);

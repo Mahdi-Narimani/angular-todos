@@ -36,6 +36,7 @@ h6 {
 
 p {
   margin: 0 !important;
+  padding: 0 !important;
 }
 
 ul {
@@ -53,10 +54,6 @@ ul {
 
 li {
   margin-block: 15px;
-}
-
-.progress-summary {
-  background: linear-gradient(290deg, #66d2d2 0, #274f4f 90%);
 }
 
 // Scrollbar Styles
@@ -80,4 +77,30 @@ ul::-webkit-scrollbar-thumb {
 /* Handle on hover */
 ul::-webkit-scrollbar-thumb:hover {
   background: #15475c;
+}
+
+.animate-navbar {
+  animation: animeNav 0.5s ease-out forwards;
+}
+
+@keyframes animeNav {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.icon-hover:hover {
+  filter: invert(32%) sepia(91%) saturate(367%) hue-rotate(152deg)
+    brightness(85%) contrast(96%);
+}
+
+.progress-summary {
+  background: linear-gradient(290deg, #66d2d2 0, #274f4f 90%);
+}
+
+.container {
+  height: calc(100vh - 146px);
 }

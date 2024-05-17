@@ -1,26 +1,27 @@
 <footer
-    class="fixed bottom-0 w-full bg-white sm:px-16 max-sm:px-6 py-5 rounded-t-3xl shadow-[rgba(0,0,0,0.1)_0_-4px_6px_-1px] rgba(0,0,0,0.1)_0_-2px_4px_-2px">
+    class="fixed bottom-0 left-0 w-full bg-white py-5 rounded-t-3xl shadow-[rgba(0,0,0,0.1)_0_-4px_6px_-1px] rgba(0,0,0,0.1)_0_-2px_4px_-2px">
+    <div class="relative">
+        <a routerLink="/new-todo" class="add-todo__btn">
+            <img src="../assets/icons/add.svg" />
+        </a>
 
-    <a routerLink="/new-todo" class="absolute -top-6 max-sm:right-[42%] sm:right-[45%] hover:scale-105 transition-all">
-        <img class="size-14" src="../assets/icons/add.svg" />
-    </a>
-
-    <div class="flex justify-between items-center">
-        <div class="flex items-center sm:gap-16 max-sm:gap-10">
-            <a routerLink="/">
-                <img class="icon-hover" src="../../../assets/icons/home.svg" alt="home icon">
-            </a>
-            <button>
-                <img class="icon-hover" src="../../../assets/icons/calendar.svg" alt="calendar icon">
-            </button>
-        </div>
-        <div class="flex items-center sm:gap-16 max-sm:gap-10">
-            <button>
-                <img class="icon-hover" src="../../../assets/icons/message.svg" alt="message icon">
-            </button>
-            <button>
-                <img class="icon-hover" src="../../../assets/icons/user.svg" alt="user icon">
-            </button>
+        <div class="flex justify-between items-center">
+            <div class="flex items-center sm:gap-20 max-sm:gap-10 sm:ml-16 max-sm:ml-5">
+                <a routerLink="/">
+                    <img class="icon-hover" src="../../../assets/icons/home.svg" alt="home icon">
+                </a>
+                <button>
+                    <img class="icon-hover" src="../../../assets/icons/calendar.svg" alt="calendar icon">
+                </button>
+            </div>
+            <div class="flex items-center sm:gap-20 max-sm:gap-10 sm:mr-16 max-sm:mr-5">
+                <button>
+                    <img class="icon-hover" src="../../../assets/icons/message.svg" alt="message icon">
+                </button>
+                <button>
+                    <img class="icon-hover" src="../../../assets/icons/user.svg" alt="user icon">
+                </button>
+            </div>
         </div>
     </div>
 </footer>

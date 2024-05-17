@@ -1,9 +1,7 @@
 <main class="py-2 sm:px-10 max-sm:px-5 tracking-wider container">
     <ul class="task-list-mytask">
         @if (todoItems.length === 0) {
-        <div class="flex justify-center items-center h-full">
-            <img class="size-96" src="../../../assets/images/todo.png" alt="todo img">
-        </div>
+        <img class="size-80 max-sm:size-60 mx-auto mt-10" src="../../../assets/images/todo.png" alt="todo img">
         }
         @for (item of todoItems; track $index) {
         <app-task-item [todoItem]="item"></app-task-item>

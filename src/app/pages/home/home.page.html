@@ -1,22 +1,18 @@
-<main class="pt-5 sm:px-10 max-sm:px-3 tracking-wider container">
+<main class="pt-5 sm:px-10 max-sm:px-3 tracking-wider">
     <app-progress [todoLength]="todos.length"></app-progress>
-
-    <div>
-        <div class="flex items-center justify-between my-5">
-            <p class="font-medium text-base text-primary">Today's Task</p>
-            <a routerLink="/my-tasks"
-                class="text-xs text-slate-400 font-medium hover:text-primary hover:text-[13px] transition-all">See
-                All</a>
-        </div>
-
-        <ul class="task-list-home">
-            @if (todos.length === 0) { 
-                <img class="size-80 max-sm:size-56 mx-auto" src="../../../assets/images/todo.png" alt="todo img">
-            }
-            @for (item of todos; track $index) {
-            <app-task-item [todoItem]="item"></app-task-item>
-            }
-        </ul>
-
+    <div class="flex items-center justify-between my-5">
+        <p class="font-medium text-base text-primary">Today's Task</p>
+        <a routerLink="/my-tasks"
+            class="text-xs text-slate-400 font-medium hover:text-primary hover:text-[13px] transition-all">See
+            All</a>
     </div>
+
+    <ul class="task-list-home">
+        @if (todos.length === 0) {
+        <img class="size-80 max-sm:size-56 mx-auto" src="../../../assets/images/todo.png" alt="todo img">
+        }
+        @for (item of todos; track $index) {
+        <app-task-item [todoItem]="item"></app-task-item>
+        }
+    </ul>
 </main>

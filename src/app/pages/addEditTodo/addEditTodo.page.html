@@ -1,4 +1,4 @@
-<main class="sm:px-10 max-sm:px-5 pt-5 pb-8 tracking-wider container overflow-y-auto">
+<main class="sm:px-10 max-sm:px-5 pt-5 pb-8 tracking-wider overflow-y-auto">
     <form [formGroup]="registerForm" (submit)="handleSubmit()">
 
         <mat-form-field class="w-full form-field text-primary">
@@ -44,7 +44,7 @@
         <mat-form-field class="w-full">
             <mat-label>Description</mat-label>
             <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4"
-                cdkAutosizeMaxRows="10" formControlName="description" name="description"></textarea>
+                cdkAutosizeMaxRows="4" formControlName="description" name="description"></textarea>
         </mat-form-field>
 
         <button mat-raised-button color="primary" class="w-full rounded-md !text-base !py-5 !font-normal"

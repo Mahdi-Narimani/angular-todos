@@ -58,24 +58,24 @@ li {
 
 // Scrollbar Styles
 /* width */
-ul::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
-ul::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: #ccc;
   border-radius: 10px;
 }
 
 /* Handle */
-ul::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: #1c607c;
   border-radius: 10px;
 }
 
 /* Handle on hover */
-ul::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   background: #15475c;
 }
 
